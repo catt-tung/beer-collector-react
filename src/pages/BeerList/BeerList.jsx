@@ -1,7 +1,7 @@
 import './CatList.css'
 
 // Components
-import CatCard from '../../components/CatCard/CatCard'
+import CatCard from '../../components/BeerCard/BeerCard'
 
 const CatList = ({ cats, catImages }) => {
   return (
