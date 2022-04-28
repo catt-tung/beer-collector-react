@@ -17,6 +17,7 @@ import ProtectedRoute from '../components/ProtectedRoute/ProtectedRoute'
 
 // Services
 import * as authService from '../services/authService'
+import * as beerService from '../services/beers'
 
 // Image Assets
 import CoolCat from '../assets/cool-cat.svg'
@@ -38,7 +39,10 @@ function App() {
     CatInBox, TeaCupCat,
   ]
 
-  const addBeer = async (beerData) => {}
+  const addBeer = async (beerData) => {
+    const beer = await beerService.create(beerData)
+    setBeers([...beers, beer])
+  }
 
   const addShop = async (shopData) => {}
 

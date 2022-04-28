@@ -1,4 +1,4 @@
-const CatInput = ({ form, handleChange }) => {
+const BeerInput = ({ form, handleChange }) => {
   return (
     <>
       <label htmlFor="name">Name</label>
@@ -6,23 +6,33 @@ const CatInput = ({ form, handleChange }) => {
         value={form.name ? form.name : ''} onChange={handleChange} id="name"
         required name="name" type="text" placeholder="Name" autoComplete="off"
       />
-      <label htmlFor="breed">Breed</label>
+      <label htmlFor="style">Style</label>
       <input
-        value={form.breed ? form.breed : ''} onChange={handleChange} id="breed"
-        required name="breed" type="text" placeholder="Breed" autoComplete="off"
+        value={form.style ? form.style : ''} onChange={handleChange} id="style"
+        required name="style" type="text" placeholder="IPA, Pilsner, etc." autoComplete="off"
+      />
+      <label htmlFor="brewery">Brewery</label>
+      <input
+        value={form.brewery ? form.brewery : ''} onChange={handleChange} id="brewery"
+        required name="brewery" type="text" placeholder="Brewery" autoComplete="off"
+      />
+      <label htmlFor="location">Location</label>
+      <input
+        value={form.location ? form.location : ''} onChange={handleChange} id="location"
+        required name="location" type="text" placeholder="Location" autoComplete="off"
       />
       <label htmlFor="description">Description</label>
       <input
         value={form.description ? form.description : ''} onChange={handleChange} id="description"
         required name="description" type="text" placeholder="Description" autoComplete="off"
       />
-      <label htmlFor="age">Age</label>
+      <label htmlFor="abv">ABV</label>
       <input
-        value={form.age ? form.age : ''} onChange={handleChange} id="age"
-        required name="age" type="number" placeholder="Age" autoComplete="off"
+        value={form.age ? form.age : ''} onChange={handleChange} id="abv"
+        required name="abv" type="number" placeholder="ABV%" autoComplete="off"
       />
     </>
   )
 }
 
-export default CatInput
+export default BeerInput

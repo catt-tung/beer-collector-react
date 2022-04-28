@@ -7,7 +7,7 @@ import './ToyDetails.css'
 
 // Components
 import ToyActions from './components/ToyActions'
-import ToyCard from '../../components/ToyCard/ToyCard'
+import ToyCard from '../../components/ShopCard/ShopCard'
 
 const ToyDetails = ({ user }) => {
   const { id } = useParams()
