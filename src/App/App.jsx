@@ -59,7 +59,14 @@ function App() {
     setUser(null)
     navigate('/')
   }
-
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await beerService.getAll()
+      setBeers(data)
+    }
+    fetchData()
+  }, [])
+  
   return (
     <>
       <Header user={user} handleLogout={handleLogout} />
