@@ -6,7 +6,7 @@ import '../../styles/Form.css'
 
 
 // Components
-import CatInput from './CatInput'
+import CatInput from './BeerInput'
 
 // Image Assets
 import NerdCat from '../../assets/nerd-cat.svg'
