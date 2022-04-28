@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const BeerCard = ({ beer, catImages }) => {
   const abvString = beer.abv > 0
-    ? `A ${beer.abv} year old ${beer.style}`
+    ? `A ${beer.abv}% ${beer.style}`
     : `A ${beer.style}.`
 
   const idx = Math.floor(Math.random() * (catImages.length))

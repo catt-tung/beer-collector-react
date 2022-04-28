@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import '../../styles/Form.css'
 
 // Services
-
+import { getOne } from '../../services/beers'
 
 // Components
 import BeerInput from './BeerInput'
@@ -26,7 +26,22 @@ const BeerForm = (props) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  useEffect(() => {}, [id])
+  useEffect(() => {
+    const fetchOne = async () => {
+      const data = await getOne(id)
+      setForm({
+        id: data.beer.id,
+        name: data.beer.name,
+        style: data.beer.style,
+        brewery: data.beer.brewery,
+        location: data.beer.location,
+        description: data.beer.description,
+        abv: data.beer.abv
+      })
+    }
+    id && fetchOne()
+    return () => setForm({})
+  }, [id])
 
   return (
     <>

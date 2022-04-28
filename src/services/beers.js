@@ -26,3 +26,28 @@ export const getAll = async () => {
     throw error
   }
 }
+
+export const getOne = async (id) => {
+  try {
+    const res = await fetch(`${BASE_URL}${id}`)
+    return await res.json()
+  } catch (error) {
+    throw error
+  }
+}
+
+export const update = async (beer) => {
+  try {
+    const res = await fetch(`${BASE_URL}${beer.id}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      },
+      body: JSON.stringify(beer)
+    })
+    return await res.json()
+  } catch (error) {
+    throw error
+  }
+}

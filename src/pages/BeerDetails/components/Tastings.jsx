@@ -7,7 +7,7 @@ import CatKabob from '../../../assets/kitty-kabob.svg'
 import FeedingForm from './FeedingForm'
 import FeedingTable from './FeedingTable'
 
-const Feedings = ({ cat, user, setCat }) => {
+const Tastings = ({ cat, user, setCat }) => {
   return (
     <section className="feedings">
       <div className="subsection-title">
@@ -35,4 +35,4 @@ const Feedings = ({ cat, user, setCat }) => {
   )
 }
 
-export default Feedings
+export default Tastings
