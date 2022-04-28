@@ -28,8 +28,8 @@ const BeerInput = ({ form, handleChange }) => {
       />
       <label htmlFor="abv">ABV</label>
       <input
-        value={form.age ? form.age : ''} onChange={handleChange} id="abv"
-        required name="abv" type="number" placeholder="ABV%" autoComplete="off"
+        value={form.abv ? form.abv : ''} onChange={handleChange} id="abv"
+        required name="abv" type="text" placeholder="ABV%" autoComplete="off"
       />
     </>
   )

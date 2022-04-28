@@ -6,30 +6,30 @@ import './ToyDetails.css'
 
 
 // Components
-import ToyActions from './components/ToyActions'
-import ToyCard from '../../components/ShopCard/ShopCard'
+import ShopActions from './components/ShopActions'
+import ShopCard from '../../components/ShopCard/ShopCard'
 
-const ToyDetails = ({ user }) => {
+const ShopDetails = ({ user }) => {
   const { id } = useParams()
-  const [toy, setToy] = useState(null)
+  const [shop, setShop] = useState(null)
 
   useEffect(() => {}, [id])
 
   return (
-    toy &&
+    shop &&
     <>
-      <section className="toy-details-container">
+      <section className="shop-details-container">
         <div className="toy-img">
-          <ToyCard toy={toy} />
+          <ShopCard shop={shop} />
         </div>
-        <div className="toy-details">
-          <h1>{toy.name}</h1>
-          <p>{toy.description}</p>
-          <ToyActions toy={toy} user={user} />
+        <div className="shop-details">
+          <h1>{shop.name}</h1>
+          <p>{shop.description}</p>
+          <ShopActions shop={shop} user={user} />
         </div>
       </section>
     </>
   )
 }
 
-export default ToyDetails
+export default ShopDetails

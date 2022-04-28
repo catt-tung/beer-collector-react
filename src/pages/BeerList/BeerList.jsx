@@ -1,23 +1,23 @@
 import './CatList.css'
 
 // Components
-import CatCard from '../../components/BeerCard/BeerCard'
+import BeerCard from '../../components/BeerCard/BeerCard'
 
-const CatList = ({ cats, catImages }) => {
+const BeerList = ({ beers, catImages }) => {
   return (
     <>
       <section className="page-header">
-        <h1>Cat List</h1>
+        <h1>Beer List</h1>
         <img src={catImages[1]} alt="A cool cat" />
         <img src={catImages[3]} alt="A happy cat" />
         <img src={catImages[5]} alt="A cat in a teacup" />
         <img src={catImages[4]} alt="A cat in a box" />
       </section>
       <section className="card-container">
-        {cats.map((cat) => (
-          <CatCard
-            cat={cat}
-            key={cat.id}
+        {beers.map((beer) => (
+          <BeerCard
+            beer={beer}
+            key={beer.id}
             catImages={catImages}
           />
         ))}
@@ -26,4 +26,4 @@ const CatList = ({ cats, catImages }) => {
   )
 }
 
-export default CatList
+export default BeerList
