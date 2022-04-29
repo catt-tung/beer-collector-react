@@ -57,14 +57,22 @@ function App() {
     )))
   }
 
-  const updateShop = async (shopData) => {}
+  const updateShop = async (shopData) => {
+    const updatedShop = await shopService.update(shopData)
+    setShops(shops.map((shop) => (
+    shop.id === updatedShop.id ? updatedShop : shop
+  )))
+  }
 
   const deleteBeer = async (id) => {
     await beerService.deleteOne(id)
     setBeers(beers.filter(beer => beer.id !== parseInt(id)))
   }
 
-  const deleteShop = async (id) => {}
+  const deleteShop = async (id) => {
+    await shopService.deleteOne(id)
+    setShops(shops.filter(shop => shop.id !== parseInt(id)))
+  }
 
   const handleLogout = () => {
     authService.logout()

@@ -21,7 +21,7 @@ const ShopList = (props) => {
       </section>
       <section className="toy-card-container">
         {props.shops.map((shop) => (
-          <ShopCard key={shop.id} toy={shop} isCard={true} />
+          <ShopCard key={shop.id} shop={shop} isCard={true} />
         ))}
       </section>
     </>
