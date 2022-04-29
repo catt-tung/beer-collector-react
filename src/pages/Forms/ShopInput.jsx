@@ -1,4 +1,4 @@
-const ToyInput = ({ form, handleChange }) => {
+const ShopInput = ({ form, handleChange }) => {
   return (
     <>
       <label htmlFor="name">Name</label>
@@ -6,18 +6,18 @@ const ToyInput = ({ form, handleChange }) => {
         value={form.name ? form.name : ''} onChange={handleChange} id="name"
         required name="name" type="text" placeholder="Name" autoComplete="off"
       />
-      <label htmlFor="description">Description</label>
+      <label htmlFor="description">Location</label>
       <input
-        value={form.description ? form.description : ''} onChange={handleChange} id="description"
-        required name="description" type="text" placeholder="Description" autoComplete="off"
+        value={form.location ? form.location : ''} onChange={handleChange} id="description"
+        required name="location" type="text" placeholder="Location" autoComplete="off"
       />
-      <label htmlFor="color">Color</label>
+      <label htmlFor="vibe">Vibe</label>
       <input
-        value={form.color ? form.color : '#ff0000'} onChange={handleChange} id="color"
-        required name="color" type="color" placeholder="Color" autoComplete="off"
+        value={form.vibe ? form.vibe : '#ff0000'} onChange={handleChange} id="color"
+        required name="vibe" type="color" placeholder="Color" autoComplete="off"
       />
     </>
   )
 }
 
-export default ToyInput
+export default ShopInput

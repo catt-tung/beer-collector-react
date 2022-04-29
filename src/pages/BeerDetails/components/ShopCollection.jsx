@@ -4,31 +4,31 @@ import MouseToy from '../../../assets/mouse.svg'
 import FishToy from '../../../assets/fish.svg'
 
 // Components
-import ToyContainer from './ToyContainer'
+import ShopContainer from './ShopContainer'
 
-const ToyCollection = ({ cat, toys, user, addToCollection }) => {
+const ShopCollection = ({ beer, shops, user, addToCollection }) => {
   return (
-    <section className="toys">
+    <section className="shops">
       <div className="subsection-title">
-        <h2>Toys</h2>
+        <h2>Shops</h2>
         <img src={StringToy} alt="A ball of string" />
         <img src={MouseToy} alt="A mouse" />
         <img src={FishToy} alt="A fishy toy" />
       </div>
-      <h3>{cat.name}'s Toys</h3>
+      <h3>{beer.name}'s Shops</h3>
       <div className="subsection-content">
-        {cat.toys.length
-          ? cat.toys.map((toy) => <ToyContainer key={toy.id} toy={toy} />)
-          : <p className="no-toys">{cat.name} doesn't have any toys 😞</p>
+        {beer.shops.length
+          ? beer.shops.map((shop) => <ShopContainer key={shop.id} shop={shop} />)
+          : <p className="no-toys">{beer.name} isn't available at any shops 😞</p>
         }
       </div>
-      {user.id === cat.profile_id &&
+      {user.id === beer.profile_id &&
         <>
-          <h3>Available Toys</h3>
+          <h3>Available Shops</h3>
           <div className="subsection-content">
-            {toys.length
-              ? toys.map((toy) => <ToyContainer key={toy.id} toy={toy} cat={cat} user={user} addToCollection={addToCollection} />)
-              : <p className="all-toys"> {cat.name} already has all the available toys 🥳</p>
+            {shops?.length
+              ? shops.map((shop) => <ShopContainer key={shop.id} shop={shop} beer={beer} user={user} addToCollection={addToCollection} />)
+              : <p className="all-toys"> {beer.name} is available at all the shops 🥳</p>
             }
           </div>
         </>
@@ -37,6 +37,6 @@ const ToyCollection = ({ cat, toys, user, addToCollection }) => {
   )
 }
 
-export default ToyCollection
+export default ShopCollection
 
 

@@ -3,8 +3,8 @@ import { hexToRGBA } from './Utils'
 
 const ShopCard = ({ shop, isCard }) => {
   const cardStyle = {
-    borderColor: `${shop.color}`,
-    backgroundColor: shop.color && hexToRGBA(shop.color)
+    borderColor: `${shop.vibe}`,
+    backgroundColor: shop.vibe && hexToRGBA(shop.vibe)
   }
 
   return (

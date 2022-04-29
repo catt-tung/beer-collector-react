@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import './CatDetails.css'
 
 // Services
-import { getOne } from '../../services/beers'
+import { getOne, assocShop } from '../../services/beers'
 
 // Components
 import Tastings from './components/Tastings'
@@ -16,7 +16,13 @@ const BeerDetails = ({ catImages, user }) => {
   const [availableShops, setAvailableShops] = useState([])
   const idx = Math.floor(Math.random() * (catImages.length))
 
-  const addToCollection = async (e) => {}
+  const addToCollection = async (e) => {
+    e.preventDefault()
+    const shopId = parseInt(e.target.id)
+    const updatedBeer = await assocShop(beer.id, shopId)
+    setAvailableShops(availableShops.filter(shop => shopId !== shop.id))
+    setBeer({...updatedBeer, tasted: beer.tasted})
+  }
 
   useEffect(() => {
     const fetchOne = async () => {
@@ -51,12 +57,12 @@ const BeerDetails = ({ catImages, user }) => {
           user={user}
           setBeer={setBeer}
         />
-        {/* <ShopCollection
+        <ShopCollection
           beer={beer}
           user={user}
           shops={availableShops}
           addToCollection={addToCollection}
-        /> */}
+        />
       </div>
     </>
   )
