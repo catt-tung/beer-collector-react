@@ -46,12 +46,12 @@ const BeerDetails = ({ catImages, user }) => {
         </div>
       </section>
       <div className="feedings-toy-container">
-        {/* <Tastings
+        <Tastings
           beer={beer}
           user={user}
           setBeer={setBeer}
         />
-        <ShopCollection
+        {/* <ShopCollection
           beer={beer}
           user={user}
           shops={availableShops}

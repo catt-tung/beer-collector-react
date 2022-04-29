@@ -4,14 +4,14 @@ import CatOnigiri from '../../../assets/cat-onigiri.svg'
 import CatKabob from '../../../assets/kitty-kabob.svg'
 
 // Components
-import FeedingForm from './FeedingForm'
-import FeedingTable from './FeedingTable'
+import TastingForm from './TastingForm'
+import TastingTable from './TastingTable'
 
-const Tastings = ({ cat, user, setCat }) => {
+const Tastings = ({ beer, user, setBeer }) => {
   return (
     <section className="feedings">
       <div className="subsection-title">
-        <h2>Feedings</h2>
+        <h2>Tastings</h2>
         <img
           src={CatCone}
           alt="An ice cream cone cat"
@@ -25,11 +25,11 @@ const Tastings = ({ cat, user, setCat }) => {
           alt="A kabob of kittens"
         />
       </div>
-      {user.id === cat.profile_id && <FeedingForm cat={cat} setCat={setCat} />}
-      <h3>Past Feedings</h3>
-      {cat.feedings.length
-        ? <FeedingTable cat={cat} />
-        : <div className="subsection-content"><p>{cat.name} has never been fed 😔</p></div>
+      {user.id === beer.profile_id && <TastingForm beer={beer} setBeer={setBeer} />}
+      <h3>Past Tastings</h3>
+      {beer.tastings.length
+        ? <TastingTable beer={beer} />
+        : <div className="subsection-content"><p>{beer.name} has never been tasted 😔</p></div>
       }
     </section>
   )
