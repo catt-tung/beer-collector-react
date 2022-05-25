@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { login, getUser } from '../../services/authService'
 
 import LogoType from '../../assets/beer-logotype.svg'
-import Splash from '../../assets/splash.svg'
+import Splash from '../../assets/beersplash.svg'
 
 
 const Home = ({ user, setUser }) => {
