@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import Logo from '../../../assets/header-logo.svg'
+import Logo from '../../../assets/beer-logo.svg'
 
 const HeaderLogo = () => {
   return (
@@ -7,7 +7,7 @@ const HeaderLogo = () => {
       <NavLink to='/'>
         <img
           src={Logo}
-          alt="The Cat Collector Logo"
+          alt="The Beer Collector Logo"
         />
       </NavLink>
     </div>
